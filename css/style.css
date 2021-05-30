@@ -141,6 +141,8 @@ body {
   margin-right: 50px;
 }
 .menu-link {
+  position: relative;
+  /* display: block; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -160,6 +162,17 @@ body {
 
 .menu-link.current {
   color: var(--accent-color);
+}
+.menu-link.current::after {
+  position: absolute;
+  display: block;
+  /* margin-top: 28px; */
+  bottom: -33px;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 .contacts-item:not(:last-child) {
   margin-right: 50px;
@@ -599,4 +612,48 @@ footer {
 .portfolio-card-link:hover .overlay,
 .portfolio-card-link:focus .overlay {
   transform: translateY(0%);
+}
+/* ==============================MODAL WINDOWW========================= */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: opacity var(--transition-duration) var(--timing-function),
+    visibility var(--transition-duration) var(--timing-function);
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background: var(--secondary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  top: 8px;
+  right: 8px;
+  padding: 0px;
+  cursor: pointer;
 }
