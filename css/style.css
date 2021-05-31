@@ -33,6 +33,7 @@ img {
 }
 .link {
   text-decoration: none;
+  display: inline-block;
 }
 .container {
   width: 1200px;
@@ -503,7 +504,7 @@ footer {
 }
 
 /* ============================== END FOOTER ====================== */
-/* ============================== Styles for portfolio============= */
+/* ============================== STYLES FOR PORTFOLIO============= */
 .filtr-section-list {
   display: flex;
   justify-content: center;
@@ -549,6 +550,9 @@ footer {
   transition-property: background-color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 .filtr-btn:hover,
 .filtr-btn:focus {
@@ -579,6 +583,11 @@ footer {
   background: var(--secondary-color);
   border: 1px solid #eeeeee;
   border-top: none;
+}
+.portfolio-card-link {
+  transition-property: box-shadow;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--timing-function);
 }
 .portfolio-card-link:hover,
 .portfolio-card-link:focus {
@@ -611,6 +620,7 @@ footer {
 .portfolio-card-link:focus .overlay {
   transform: translateY(0%);
 }
+/* ========================== END STYLES FOR PORTFOLIO================= */
 /* ==============================MODAL WINDOWW========================= */
 .backdrop {
   position: fixed;
@@ -637,7 +647,7 @@ footer {
   top: 50%;
   left: 50%;
   /* transform: translate(-50%, -50%); */
-  transform: translate(-50%, -50%) scale(1.25);
+  transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-duration) var(--timing-function);
   width: 528px;
   height: 581px;
